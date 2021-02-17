@@ -25,7 +25,7 @@ const Cita = ({cita,eliminarPaciente}) => {
             </View>
 
            <View>
-                <TouchableHighlight onPress = { ()=> dialogoEliminar(cita.id) } style={styles.btnEliminar}>
+                <TouchableHighlight onPress = { () => dialogoEliminar(cita.id) } style={styles.btnEliminar}>
                     <Text style={styles.txtEliminar}>Eliminar &times;</Text>
                 </TouchableHighlight>
            </View>

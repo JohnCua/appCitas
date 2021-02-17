@@ -9,6 +9,7 @@ import {
 
 //componentes
 import Cita from './src/componentes/Cita';
+import Formulario from './src/componentes/Formulario';
 
 
 const App = () =>  {
@@ -27,7 +28,10 @@ const App = () =>  {
 
   return (
     <View style={styles.contenedor}>
+
       <Text style={styles.titulo}>Administrador de citas</Text>
+
+      <Formulario />
 
       <Text style={styles.titulo}>{citas.length > 0 ? 'Administra tus citas' : 'Agrega una cita'}</Text>
 
