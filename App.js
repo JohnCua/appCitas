@@ -6,6 +6,8 @@ import {
   Text,
   FlatList,
   TouchableHighlight,
+  TouchableWithoutFeedback,
+  Keyboard,
   Platform
 } from 'react-native';
 
@@ -34,14 +36,16 @@ const App = () =>  {
     guardarshowForm(!showForm);
   }
 
+
   return (
+  
     <View style={styles.contenedor}>
 
       <Text style={styles.titulo}>Administrador de citas</Text>
 
       <View>
           <TouchableHighlight onPress = { () => showFormF()} style={styles.btnShowForm}>
-              <Text style={styles.txtShowForm}>Crear Nueva Cita</Text>
+              <Text style={styles.txtShowForm}>{ showForm ? 'Cancelar Crear Cita' : 'Crear Nueva Cita' }</Text>
           </TouchableHighlight>
       </View>
 
@@ -70,9 +74,9 @@ const App = () =>  {
       }
       </View>
 
-     
-
     </View>
+  
+    
   );
 };
 

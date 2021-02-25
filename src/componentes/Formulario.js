@@ -8,7 +8,9 @@ import {
   TextInput,
   TouchableHighlight,
   Alert,
-  ScrollView
+  ScrollView,
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import shortid from 'shortid';
@@ -108,8 +110,15 @@ const Formulario = ({citas, setCitas, guardarshowForm}) => {
     }
 
 
+  const cerrarTeclado = () => {
+    Keyboard.dismiss();
+  }
+
+
 
     return (
+      //TouchableWithoutFeedback sirve para cerrar el teclado cuando el usuario toque otra parte de la pantalla
+      <TouchableWithoutFeedback onPress= { () => cerrarTeclado()}>  
        <ScrollView style={ styles.formulario }>
            <View>
                 <Text style={ styles.label }>Paciente:</Text>
@@ -185,6 +194,8 @@ const Formulario = ({citas, setCitas, guardarshowForm}) => {
           
           
        </ScrollView>
+
+       </TouchableWithoutFeedback>
     );
 };
 
